@@ -1,0 +1,19 @@
+<div class="container">
+<div *ngIf="showLogin">
+    <h1>Sign in</h1>
+    <input type="email" [(ngModel)]="email" class="text-box" placeholder="email" required><br>
+    <input type="password" [(ngModel)]="password" class="text-box" placeholder="password" required><br>
+    <button type="submit" (click)="validate()" class="btn">Sign in</button><br>
+    <p>Don't have an account?<a style="cursor: pointer;" (click)="openRegistration()">Join now</a></p>
+</div>
+
+<div *ngIf="showRegistration" id="registration">
+    <h1>Sign up</h1>
+    <input type="text" [(ngModel)]="user.firstName" class="text-box" placeholder="First Name" required><br>
+    <input type="text" [(ngModel)]="user.lastName" class="text-box" placeholder="Last Name" required><br>
+    <input type="email" [(ngModel)]="user.email" class="text-box" placeholder="Email" required><br>
+    <input type="password" [(ngModel)]="user.password" class="text-box" placeholder="Password" required><br>
+    <input type="password" [(ngModel)]="user.confirmPassword" class="text-box" placeholder="Confirm Password" required><br>
+    <button type="submit" class="btn" (click)="createAccount()">Sign up</button>
+</div>
+</div> 
